@@ -87,17 +87,22 @@ public class Main {
         String license = scanner.next();
 
         Car foundCar = null;
-        for (Car car : cars) {
-            if (car.getLicense().equalsIgnoreCase(license)) {
-                foundCar = car;
-                break;
-            }
-        }
+        foundCar = loopAroundCars(cars, license, foundCar);
 
         if (foundCar != null) {
             System.out.println("Car found:\n" + foundCar.toString());
         } else {
             System.out.println("No car with the license plate '" + license + "' was found.");
         }
+    }
+
+    private static Car loopAroundCars(List<Car> cars, String license, Car foundCar) {
+        for (Car car : cars) {
+            if (car.getLicense().equalsIgnoreCase(license)) {
+                foundCar = car;
+                break;
+            }
+        }
+        return foundCar;
     }
 }
