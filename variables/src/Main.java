@@ -37,8 +37,8 @@ public class Main {
         System.out.print("Please enter menu choice: ");
     }
 
-    private static void printCars(List<Car> cars) {
-        for (Car car : cars) {
+    private static void printCars(List<Car> carList) {
+        for (Car car : carList) {
             System.out.println(car.toString());
         }
     }
